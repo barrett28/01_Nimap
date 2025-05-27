@@ -1,3 +1,5 @@
+
+
 After creating a superuser, I have created a token for the loged-in user
 
 with postman:
@@ -127,6 +129,9 @@ output:
 }
 ---------------------------------
 
+cd client_project_user
+for run : python manage.py runserver
 
+use: api/
 
 
