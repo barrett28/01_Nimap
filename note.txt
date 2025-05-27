@@ -7,13 +7,13 @@ endpoint : /api-token-auth/
 
 input:
 {
-  "username": "your_username",
-  "password": "your_password"
+  "username": "Bharat",
+  "password": "bharat123"
 }
 
 
 tokened will be provided:
-ex: token23243k4jnj(example)
+e9301ed167aa4358f02269701a8ef1e080d8dc20 
 
 ------------------
 
