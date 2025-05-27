@@ -1,0 +1,132 @@
+After creating a superuser, I have created a token for the loged-in user
+
+with postman:
+endpoint : /api-token-auth/
+
+input:
+{
+  "username": "your_username",
+  "password": "your_password"
+}
+
+
+tokened will be provided:
+ex: token23243k4jnj(example)
+
+------------------
+
+endpoint: http://127.0.0.1:8000/api/clients/   GET
+
+to see clients 
+
+
+-------------------
+# creating a client
+
+endpoint: http://127.0.0.1:8000/api/clients/     POST
+ 
+{
+  "client_name": "Company A"
+}
+
+----------------------
+
+#Get Client Details with Projects
+
+/api/clients/<id> -> http://127.0.0.1:8000/api/clients/1/
+
+
+output:
+{
+    "id": 1,
+    "client_name": "Nimap",
+    "created_at": "2025-05-26T11:04:45.189975Z",
+    "updated_at": "2025-05-26T11:04:45.190053Z",
+    "created_by": "Bharat",
+    "projects": [
+        {
+            "id": 1,
+            "project_name": "Project A",
+            "client": "Nimap",
+            "users": [
+                {
+                    "id": 1,
+                    "username": "rohit"
+                }
+            ],
+            "created_at": "2025-05-26T11:12:14.889826Z",
+            "created_by": 3
+        }
+    ]
+}
+
+-------------------------
+
+# Update a Client
+
+http://127.0.0.1:8000/api/clients/1/
+
+{
+  "project_name": "Company A",
+  "client_name": "Rohit"
+}
+
+
+
+{
+    "id": 1,
+    "client_name": "Rohit",
+    "created_at": "2025-05-26T11:04:45.189975Z",
+    "updated_at": "2025-05-26T18:21:41.812136Z",
+    "created_by": "Bharat",
+    "projects": [
+        {
+            "id": 1,
+            "project_name": "Project A",
+            "client": "Rohit",
+            "users": [
+                {
+                    "id": 1,
+                    "username": "rohit"
+                }
+            ],
+            "created_at": "2025-05-26T11:12:14.889826Z",
+            "created_by": 3
+        }
+    ]
+}
+
+
+------------------
+# Create a Project for a Client
+
+http://127.0.0.1:8000/api/clients/3/projects/
+
+input: {
+  "project_name": "Project B",
+  "user_ids": [1,2]
+}
+
+output:
+{
+    "id": 3,
+    "project_name": "Project B",
+    "client": "company A",
+    "users": [
+        {
+            "id": 1,
+            "username": "rohit"
+        },
+        {
+            "id": 2,
+            "username": "Rohan"
+        }
+    ],
+    "created_at": "2025-05-26T18:23:30.872011Z",
+    "created_by": 3
+}
+---------------------------------
+
+
+
+
