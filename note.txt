@@ -129,6 +129,29 @@ output:
 }
 ---------------------------------
 
+# List of all projects assigned to the logged-in user
+
+http://127.0.0.1:8000/api/projects/my_projects/
+
+output: 
+[
+    {
+        "id": 4,
+        "project_name": "Company A",
+        "client": "company A",
+        "users": [
+            {
+                "id": 3,
+                "username": "Bharat"
+            }
+        ],
+        "created_at": "2025-05-27T05:53:50.598674Z",
+        "created_by": 3
+    }
+]
+
+-------------------------------
+
 cd client_project_user
 for run : python manage.py runserver
 
